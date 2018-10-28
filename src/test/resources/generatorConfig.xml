@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="D:\java\maven\ojdbc6-11.2.0.1.0.jar" />
+	<context id="fsgadtfj" targetRuntime="MyBatis3"
+			 defaultModelType="flat">
+		<!-- 注释生成器 -->
+		<commentGenerator>
+			<!-- 是否去掉注释 -->
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+						connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" userId="K_TEST"
+						password="K_TEST_9"/>
+		<javaModelGenerator targetPackage="example.user.entity"
+							targetProject="src/main/java" />
+		<sqlMapGenerator targetPackage="example.xml.user"
+						 targetProject="src/main/resources" />
+		<javaClientGenerator targetPackage="example.user.mapper"
+							 targetProject="src/main/java" type="XMLMAPPER" />
+
+		<table tableName="t_user" domainObjectName="User">
+
+		</table>
+		<!--	<javaModelGenerator targetPackage="intedb.entity"
+                                targetProject="src/main/java" />
+            <sqlMapGenerator targetPackage="intedb.mapper"
+                             targetProject="src/main/resources" />
+            <javaClientGenerator targetPackage="intedb.mapper"
+                                 targetProject="src/main/java" type="XMLMAPPER" />
+
+            <table tableName="T_FWXX_MPXX" domainObjectName="FwxxMpxx">
+
+            </table>-->
+		<!--
+		<table tableName="ETJHQK" domainObjectName="Etjhqk"></table>
+		-->
+
+		<!--<table tableName="LDRYDJ" domainObjectName="Ldrydj">
+			<columnOverride column="SG" javaType="Double" />
+			<columnOverride column="NANGS" javaType="Integer" />
+			<columnOverride column="NUGS" javaType="Integer" />
+			<columnOverride column="SHR" property="shr2" />
+		</table>-->
+		<!--
+		<table tableName="FWXX" domainObjectName="Fwxx">
+			<columnOverride column="JZMJ" javaType="Double" />
+			<columnOverride column="CZMJ" javaType="Double" />
+		</table>
+		<table tableName="ETXX" domainObjectName="Etxx"></table>
+		-->
+		<!--
+		<javaModelGenerator targetPackage="sdsys.sys.entity"
+							targetProject="src/main/java" />
+		<sqlMapGenerator targetPackage="sdsys.sys.mapper"
+						 targetProject="src/main/resources" />
+		<javaClientGenerator targetPackage="sdsys.sys.mapper"
+							 targetProject="src/main/java" type="XMLMAPPER" />
+
+		<table tableName="DICTIONARY_ITEM" domainObjectName="DictionaryItem">
+			<columnOverride column="SORT_" javaType="Integer" />
+		</table>
+		-->
+	</context>
+</generatorConfiguration>

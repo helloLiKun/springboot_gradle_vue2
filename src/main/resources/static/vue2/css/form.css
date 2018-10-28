@@ -1,0 +1,18 @@
+body{
+    text-align: center;
+}
+.input-cls{
+    width: 300px;
+    height: 35px;
+    margin:0 auto;
+    margin-top:20px;
+}
+
+.input-cls input{
+    width: 200px;
+}
+.btn-cls{
+    margin:0 auto;
+    width: 200px;
+    height: 35px;
+}

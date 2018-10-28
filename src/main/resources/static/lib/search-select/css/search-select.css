@@ -1,0 +1,42 @@
+.search-select-cls{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    font-size: 16px;
+    display: none;
+}
+
+.search-select-cls > input{
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+.show-cls{
+    width: 100%;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.show-cls:hover{
+    cursor:auto
+}
+
+.search-select-cls  > .options-cls{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    border:1px solid #e0e0e0;
+    overflow: auto;
+    background-color: whitesmoke;
+    z-index: 1;
+}
+.search-select-cls > .options-cls > table > tr{
+    height: 30px;
+}
+
+.search-select-cls > .options-cls >  table > tr:hover{
+    background-color: white;
+}

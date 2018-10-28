@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: home
+  #数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    testWhileIdle: true
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+  #thymeleaf模板引擎
+  thymeleaf:
+    encoding: utf-8
+    content-type: text/html
+    mode: HTML
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+#mybatis
+mybatis:
+  mapper-locations: classpath*:/example/**/*.xml
+  type-aliases-package: example.**.entity
+#mybatis分页插件
+pagehelper:
+  helper-dialect: oracle
+  offset-as-page-num: true
+  row-bounds-with-count: true
+logging:
+  file: ./logs/app_log.log

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>信息上传测试</title>
+    <link rel="stylesheet" href="/test/css/form.css">
+</head>
+<body>
+<div id="vm-id">
+    <form id="form-id" type="post" enctype="multipart/form-data">
+        <div class="input-cls">
+            <span>名字：</span><input  type="text" v-model="user.name">
+        </div>
+        <div class="input-cls">
+            <span>年龄：</span><input type="number" v-model="user.age">
+        </div>
+        <div class="input-cls">
+            <input  type="file" id="file-1">
+        </div>
+        <div class="input-cls">
+            <input  type="file" id="file-2">
+        </div>
+
+        <div class="btn-cls">
+            <button type="button" @click="userSubmit">上传user对象数据</button>
+        </div>
+        <div class="btn-cls">
+            <button type="submit">formdata上传所有数据</button>
+        </div>
+    </form>
+
+    <input type="hidden" th:value="${userJSON}" id="userJSON">
+</div>
+<script type="text/javascript" th:src="${'/lib/jquery.min.js'}"></script>
+<script type="text/javascript" th:src="${'/lib/bootstrap/js/bootstrap.min.js'}"></script>
+<script type="text/javascript" th:src="${'/lib/vue2/vue.min.js'}"></script>
+
+</body>
+<script>
+    var vm;
+    vm = new Vue({
+        el: '#vm-id',
+        data: {
+            user:'',
+            state:'',
+            zp:''
+        },
+        methods: {
+            fileChange:function (e) {
+              this.zp=e.target.files[0];
+            },
+            userSubmit:function () {
+                $.ajax({
+                    url:'/userSubmit',
+                    type:'POST',
+                    async:true,
+                    data:JSON.stringify(vm.user),
+                    contentType:'application/json',
+                    success:function (resp) {
+                        vm.state=JSON.parse(resp).msg;
+//                        alert(resp)
+                    },
+                    error:function (resp) {
+                        alert(resp.msg)
+                    }
+                })
+            }
+        }
+    });
+
+    $('#form-id').submit(function () {
+        var file1=$('#file-1').get(0).files[0];
+        var file2=$('#file-2').get(0).files[0];
+        var formData=new FormData();
+        formData.append("id","123id");
+        formData.append("userJSON",JSON.stringify(vm.user))
+        formData.append("files",file1);
+        formData.append("files",file2)
+        $.ajax({
+            url:'/formMultiple',
+            type:'POST',
+            data:formData,
+            async: false,
+            cache: false,
+            contentType: false, //不设置内容类型
+            processData: false, //不处理数
+            success:function (resp) {
+                alert(resp)
+            },
+            error:function (resp) {
+                alert(resp.msg)
+            }
+        })
+        return false;
+    })
+    vm.$nextTick(function () {
+        this.user = JSON.parse($('#userJSON').val())
+    })
+</script>
+</html>

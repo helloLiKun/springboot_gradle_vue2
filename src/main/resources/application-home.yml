@@ -1,0 +1,32 @@
+#开发环境
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: K_TEST
+    password: K_TEST_9
+    initialSize: 1
+    minIdle: 1
+    maxActive: 20
+  #thymeleaf模板引擎
+  thymeleaf:
+    cache: false
+  redis:
+      host: localhost
+      port: 6378
+      database: 1
+      pool:
+        max-active: 8
+        max-wait: 1
+        max-idle: 500
+        min-idle: 0
+
+  session:
+      store-type: redis
+#web服务器端口
+server:
+  port: 8809
+
+
+
+
+

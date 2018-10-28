@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js 2.0测试</title>
+    <link href="/vue2/css/form.css" rel="stylesheet">
+</head>
+<body>
+<div id="vm-id">
+    <h3>特性</h3>
+    <div  v-bind:title="message">title test</div>
+    <input v-bind:value="message" v-bind:disabled="disabled">
+    <div v-bind:id="message" >v-bind:id</div>
+    <a v-bind:href="url"><u>href test</u></a>
+    <button v-on:click="alert('click here')">v-on click</button>
+    <h3>javascript表达式</h3>
+    <p>{{number+1}}</p>
+    <p>{{flag==true?'is true':'is false'}}</p>
+    <h3>计算属性和侦听</h3>
+    <h4>计算属性</h4>
+    <p>Original message:{{message}}</p>
+    <p>reversed message:{{reverseMessage}}</p>
+    <p>小结：计算属性即封装一段逻辑处理，直接获取相关结果，便于复用和维护</p>
+    <h4>计算属性vs方法</h4>
+    <button @click="showComputedNow">showComputedNow</button>
+    <button @click="showMethodNow">showMethodNow</button>
+    <p>小结：计算属性基于vue实例对象的依赖进行缓存，而date对象不是响应式所以有缓存值，而方法中会屡次更新</p>
+    <h4>计算属性vs侦听属性</h4>
+    <p>fullName:{{fullName}}</p>
+
+</div>
+<script type="text/javascript" th:src="${'/lib/jquery.min.js'}"></script>
+<script type="text/javascript" th:src="${'/lib/bootstrap/js/bootstrap.min.js'}"></script>
+<script type="text/javascript" th:src="${'/lib/vue2/vue.min.js'}"></script>
+<script type="text/javascript" th:src="${'/vue2/js/vue-component.js'}"></script>
+
+</body>
+<script>
+    function test() {
+        alert('test:'+vm.vtest)
+    }
+    var vm;
+    vm = new Vue({
+        el: '#vm-id',
+        data: {
+            message:'hello world',
+            disabled:true,
+            number:3,
+            flag:true,
+            url:'#',
+            firstName:'Jack',
+            lastName:'Smith',
+//            fullName:'Jack Smith'
+        },
+        computed: {
+            reverseMessage:function () {
+                return this.message.split('').reverse().join(' ');
+            },
+            nowtime:function () {
+                return Date.now();
+            },
+            fullName:function () {
+                return this.fi
+            }
+
+        },
+        watch:{
+//            firstName:function (val) {
+//                this.fullName=val+' '+this.lastName;
+//            },
+//            lastName:function (val) {
+//                this.fullName=this.firstName+' '+val;
+//            }
+        },
+        methods: {
+            now:function () {
+                return Date.now();
+            },
+            showComputedNow:function () {
+                console.log(vm.nowtime)
+            },
+            showMethodNow:function () {
+                console.log(vm.now());
+            },
+        },
+        beforeCreate:function () {
+            console.log('beforeCreate')
+        },
+        created: function () {
+            console.log('created:' + this.datas);
+        },
+        beforeMount:function () {
+            console.log('beforeMount')
+        },
+        mounted: function () {
+            console.log('mounted:' + this.datas)
+        },
+        beforeUpdate:function () {
+            console.log('beforeUpdate')
+        },
+        update:function () {
+            console.log('update')
+        },
+        beforeDestory:function () {
+            console.log('beforeDestory')
+        },
+        destory:function () {
+            console.log('destory')
+        }
+    });
+    vm.$nextTick(function () {
+    })
+</script>
+</html>
