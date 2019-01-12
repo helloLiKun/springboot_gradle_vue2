@@ -1,4 +1,4 @@
-2018-10-28 23:14:56.090  INFO 9352 --- [main] example.Application                      : Starting Application on MS-20171231KOHV with PID 9352 (started by Administrator in D:\java\INTELLIJ IDEA\springboot_gradle_vue2)
+2018-10-28 23:14:56.090  INFO 9352 --- [main] example.Application                      : Starting Application on MS-20171231KOHV with PID 9352 (started by Administrator in D:\java\INTELLIJ IDEA\springboot)
 2018-10-28 23:14:56.178  INFO 9352 --- [main] example.Application                      : The following profiles are active: home
 2018-10-28 23:14:57.571  INFO 9352 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5c6648b0: startup date [Sun Oct 28 23:14:57 GMT+08:00 2018]; root of context hierarchy
 2018-10-28 23:14:59.880  INFO 9352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
