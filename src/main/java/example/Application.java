@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
- * Created by ray_guan.
+ * https://www.cnblogs.com/softidea/p/5991897.html
  */
 @SpringBootApplication
 @EnableConfigurationProperties
