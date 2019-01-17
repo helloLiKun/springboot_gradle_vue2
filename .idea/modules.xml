@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot_gradle_vue2.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot_gradle_vue2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot_gradle_vue2_main.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot_gradle_vue2_main.iml" group="springboot_gradle_vue2" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot_gradle_vue2_test.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot_gradle_vue2_test.iml" group="springboot_gradle_vue2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot_security.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot_security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot_security_main.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot_security_main.iml" group="springboot_security" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot_security_test.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot_security_test.iml" group="springboot_security" />
     </modules>
   </component>
 </project>

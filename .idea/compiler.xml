@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="springboot_gradle_vue2_main" target="1.8" />
       <module name="springboot_gradle_vue2_test" target="1.8" />
+      <module name="springboot_security_main" target="1.8" />
+      <module name="springboot_security_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

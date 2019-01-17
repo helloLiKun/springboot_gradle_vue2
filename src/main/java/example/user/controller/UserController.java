@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import example.user.entity.User;
+import example.user.mapping.UserMapping;
 import example.user.service.UserService;
 import example.util.AjaxResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,15 @@ import java.util.List;
  * Created by Administrator on 2018/6/10 0010.
  */
 @Controller
-public class UserController {
-    @RequestMapping("/form")
+public class UserController implements UserMapping {
+    @RequestMapping(LOGIN)
     public String userList(ModelMap map){
+        map.put("userJSON",JSON.toJSONString(new User()));
+        return "user/form";
+    }
+
+    @RequestMapping("/test")
+    public String test(ModelMap map){
         map.put("userJSON",JSON.toJSONString(new User()));
         return "user/form";
     }

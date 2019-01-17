@@ -47,6 +47,7 @@ dependencies {
     )
     compile(
             "org.springframework.boot:spring-boot-starter-undertow",
+            "org.springframework.boot:spring-boot-starter-security",
             "org.thymeleaf:thymeleaf:3.0.5.RELEASE",
             "org.thymeleaf:thymeleaf-spring4:3.0.5.RELEASE",
             "nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.2.1",
@@ -65,6 +66,7 @@ dependencies {
             "org.springframework.session:spring-session",
             "org.springframework.boot:spring-boot-starter-data-redis",
             "commons-io:commons-io:2.5",
-            "dom4j:dom4j:1.6.1"
+            "dom4j:dom4j:1.6.1",
+
     )
 }

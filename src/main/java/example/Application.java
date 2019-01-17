@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
+ * https://www.cnblogs.com/softidea/p/7068149.html
  * https://www.cnblogs.com/softidea/p/5991897.html
+ * https://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/
  */
 @SpringBootApplication
 @EnableConfigurationProperties
