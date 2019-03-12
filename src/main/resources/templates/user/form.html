@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml"
-      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>信息上传测试</title>
-    <link rel="stylesheet" href="/test/css/form.css">
+    <link rel="stylesheet" href="/sys/css/form.css">
 </head>
 <body>
 <div id="vm-id">
@@ -37,7 +37,7 @@
 <script type="text/javascript" th:src="${'/lib/vue2/vue.min.js'}"></script>
 
 </body>
-<script>
+<script type="text/javascript">
     var vm;
     vm = new Vue({
         el: '#vm-id',
@@ -52,7 +52,7 @@
             },
             userSubmit:function () {
                 $.ajax({
-                    url:'/userSubmit',
+                    url:'/sys/userSubmit',
                     type:'POST',
                     async:true,
                     data:JSON.stringify(vm.user),
@@ -78,7 +78,7 @@
         formData.append("files",file1);
         formData.append("files",file2)
         $.ajax({
-            url:'/formMultiple',
+            url:'/sys/formMultiple',
             type:'POST',
             data:formData,
             async: false,

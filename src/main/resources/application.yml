@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: home
+    active: office
   #数据源
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
