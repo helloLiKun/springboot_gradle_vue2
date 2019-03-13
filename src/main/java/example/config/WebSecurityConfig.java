@@ -14,9 +14,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    MyAuthenticationProvider myAuthenticationProvider;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .authenticationProvider(myAuthenticationProvider)
 //               防止CSRF（Cross-site request forgery跨站请求伪造）的发生，限制了除了get以外的大多数方法。
                 .csrf().disable()
                 //添加权限信息
