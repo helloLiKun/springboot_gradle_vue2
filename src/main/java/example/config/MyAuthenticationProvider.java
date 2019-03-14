@@ -21,8 +21,6 @@ import java.util.List;
  */
 @Component
 public class MyAuthenticationProvider implements AuthenticationProvider,Serializable {
-    List<User> userList = new ArrayList<>();
-
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();
