@@ -13,10 +13,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
     @Autowired
     MyAuthenticationProvider myAuthenticationProvider;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -30,9 +28,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/base/sys/login")
+                .loginProcessingUrl("/sys/userSubmit")
+                .passwordParameter("pwd")
+                .usernameParameter("username")
                 .permitAll()
                 .and()
-                .logout()
+                .logout().logoutUrl("/logout").logoutSuccessUrl("/logout-success")
                 .permitAll();
     }
 

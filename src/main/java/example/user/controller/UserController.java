@@ -8,6 +8,7 @@ import example.user.service.UserService;
 import example.util.AjaxResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -30,7 +31,7 @@ public class UserController implements UserMapping {
     @RequestMapping(LOGIN)
     public String userList(ModelMap map){
         map.put("userJSON",JSON.toJSONString(new User()));
-        return "user/form";
+        return "user/login";
     }
 
     @RequestMapping("/test")
@@ -39,15 +40,22 @@ public class UserController implements UserMapping {
         return "user/form";
     }
 
+    @RequestMapping("/logout-success")
+    public String logout(){
+        return "user/logout";
+    }
     @RequestMapping("/sys/userSubmit")
     @ResponseBody
-    public  String userSubmit(@RequestBody User user, HttpServletRequest request){
+    public  String userSubmit(String username,String pwd, HttpSession session){
         AjaxResponse.Body resp=AjaxResponse.FAILED.body();
-        System.out.println("user:"+user.toString());
-        UsernamePasswordAuthenticationToken token=new UsernamePasswordAuthenticationToken(user.getName(),user.getPwd());
-        Authentication authentication=authenticationManager.authenticate(token);
+        UsernamePasswordAuthenticationToken token=new UsernamePasswordAuthenticationToken(username,pwd);
+        Authentication authentication=null;
+        try {
+             authentication=authenticationProvider.authenticate(token);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        HttpSession session = request.getSession();
         session.setAttribute("SPRING_SECURITY_CONTEXT", SecurityContextHolder.getContext()); // 这个非常重要，否则验证后将无法登陆
         resp=AjaxResponse.SUCCEEDED.body();
         resp.setMsg(authentication.getName());
@@ -69,7 +77,5 @@ public class UserController implements UserMapping {
     @Autowired
     UserService userService;
     @Autowired
-    MyAuthenticationProvider myAuthenticationProvider;
-    @Autowired
-    private AuthenticationManager authenticationManager;  // 这样就可以自动注入？oh ，mygod ,how can it do so?
+    AuthenticationProvider authenticationProvider;
 }

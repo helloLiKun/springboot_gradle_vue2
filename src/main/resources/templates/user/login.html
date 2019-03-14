@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>信息上传测试</title>
+    <link rel="stylesheet" href="/sys/css/form.css">
+</head>
+<body>
+<div id="vm-id">
+    <form action="/sys/userSubmit" method="post">
+        <div class="input-cls">
+            <span>名字：</span><input  type="text" name="username">
+        </div>
+        <div class="input-cls">
+            <span>密码：</span><input type="password" name="pwd">
+        </div>
+        <div class="input-cls">
+            <span>记住密码：</span><input type="checkbox" name="remeber-me">
+        </div>
+        <div class="btn-cls">
+            <button type="submit">login</button>
+        </div>
+    </form>
+
+</div>
+<script type="text/javascript" th:src="${'/lib/jquery.min.js'}"></script>
+<script type="text/javascript" th:src="${'/lib/bootstrap/js/bootstrap.min.js'}"></script>
+<script type="text/javascript" th:src="${'/lib/vue2/vue.min.js'}"></script>
+
+</body>
+<script type="text/javascript">
+    var vm;
+    vm = new Vue({
+        el: '#vm-id',
+        data: {
+
+        },
+        methods: {
+
+        }
+    });
+</script>
+</html>
