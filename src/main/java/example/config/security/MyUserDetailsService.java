@@ -1,4 +1,4 @@
-package example.config;
+package example.config.security;
 
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;

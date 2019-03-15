@@ -1,4 +1,4 @@
-package example.config;
+package example.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +15,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     MyAuthenticationProvider myAuthenticationProvider;
+    @Autowired
+    AuthenticationSuccessHandlerImpl authenticationSuccessHandler;
+    @Autowired
+    AuthenticationFailureHandlerImpl authenticationFailureHandler;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -23,10 +27,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 //添加权限信息
                 .authorizeRequests()
-                .antMatchers("/base/sys/*", "/lib/**", "/sys/**").permitAll()
+                .antMatchers("/base/sys/*", "/lib/**", "/sys/**","/login-success","/login-faild").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
+//                .defaultSuccessUrl("/login-success")
+//                .failureUrl("/login-faild")
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
                 .loginPage("/base/sys/login")
                 .loginProcessingUrl("/sys/userSubmit")
                 .passwordParameter("pwd")
@@ -35,6 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/logout-success")
                 .permitAll();
+
     }
 
     @Autowired
