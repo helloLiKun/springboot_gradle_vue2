@@ -20,7 +20,6 @@ public class MyUserDetailsService implements UserDetailsService {
             User user=new User("admin","b594510740d2ac4261c1b2fe87850d08",null);
             return user;
         }
-
         return null;
     }
 
