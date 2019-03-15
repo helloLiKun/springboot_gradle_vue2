@@ -1,23 +1,36 @@
 package example.config.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Created by lk on 2019/3/13.
  */
 @Component
 public class MyUserDetailsService implements UserDetailsService {
+
+    @Autowired
+    MyGrantedAuthority myGrantedAuthority;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //这里可以通过数据库来查找到实际的用户信息，这里我们先模拟下,后续我们用数据库来实现
         if(username.equals("admin")) {
             //假设返回的用户信息如下;
-            User user=new User("admin","b594510740d2ac4261c1b2fe87850d08",null);
+            List<GrantedAuthority> authorities=new ArrayList<>();
+            authorities.add(myGrantedAuthority);
+            User user=new User("admin", "b594510740d2ac4261c1b2fe87850d08",authorities);
             return user;
         }
         return null;
