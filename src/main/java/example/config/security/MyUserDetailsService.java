@@ -1,6 +1,7 @@
 package example.config.security;
 
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,12 +15,10 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //这里可以通过数据库来查找到实际的用户信息，这里我们先模拟下,后续我们用数据库来实现
-        if(username.equals("admin"))
-        {
+        if(username.equals("admin")) {
             //假设返回的用户信息如下;
-            MyUserDetails myUserDetails=new MyUserDetails("admin", "b594510740d2ac4261c1b2fe87850d08", "ROLE_ADMIN", true,true,true, true);
-            return myUserDetails;
-
+            User user=new User("admin","b594510740d2ac4261c1b2fe87850d08",null);
+            return user;
         }
 
         return null;

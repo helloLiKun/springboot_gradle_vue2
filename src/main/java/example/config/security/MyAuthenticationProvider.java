@@ -8,6 +8,7 @@ import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -23,8 +24,8 @@ public class MyAuthenticationProvider implements AuthenticationProvider,Serializ
         String username = authentication.getName();
         String password = (String) authentication.getCredentials();
         //这里构建来判断用户是否存在和密码是否正确
-        MyUserDetails myUserDetails = (MyUserDetails) myUserDetailsService.loadUserByUsername(username); // 这里调用我们的自己写的获取用户的方法；
-        if (myUserDetails == null) {
+        User user = (User) myUserDetailsService.loadUserByUsername(username); // 这里调用我们的自己写的获取用户的方法；
+        if (user == null) {
             throw new BadCredentialsException("用户名不存在");
         }
         //这里我们还要判断密码是否正确，实际应用中，我们的密码一般都会加密，以Md5加密为例
@@ -33,12 +34,12 @@ public class MyAuthenticationProvider implements AuthenticationProvider,Serializ
         //就是加点盐的意思，这样的好处就是用户的密码如果都是123456，由于盐的不同，密码也是不一样的，就不用怕相同密码泄漏之后，不会批量被破解。
         String encodePwd = md5PasswordEncoder.encodePassword(password, username);
         //这里判断密码正确与否
-        if (!myUserDetails.getPassword().equals(encodePwd)) {
+        if (!user.getPassword().equals(encodePwd)) {
             throw new BadCredentialsException("密码不正确");
         }
-        Collection<? extends GrantedAuthority> authorities = myUserDetails.getAuthorities();
+        Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
         //构建返回的用户登录成功的token
-        return new UsernamePasswordAuthenticationToken(myUserDetails, password, authorities);
+        return new UsernamePasswordAuthenticationToken(user, password, authorities);
     }
 
     @Override
