@@ -7,11 +7,15 @@ import example.user.service.UserService;
 import example.util.AjaxResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/6/10 0010.
@@ -43,6 +47,19 @@ public class UserController implements UserMapping {
     @RequestMapping("/logout-success")
     public String logout(){
         return "user/logout";
+    }
+
+    @RequestMapping("/show-authorizes")
+    @ResponseBody
+    public String showAuthorizes(){
+        String qxs="权限为：";
+        List<GrantedAuthority> grantedAuthorities= (List<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+        if(grantedAuthorities!=null){
+            for(GrantedAuthority authority:grantedAuthorities){
+                qxs+=authority.getAuthority()+"  ";
+            }
+        }
+        return qxs;
     }
 
     @RequestMapping("/sys/formMultiple")

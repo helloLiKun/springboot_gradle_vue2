@@ -2969,3 +2969,824 @@ java.lang.IllegalArgumentException: Cannot pass a null GrantedAuthority collecti
 2019-03-15 14:57:57.853  INFO 5372 --- [XNIO-2 task-1] io.undertow.servlet                      : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2019-03-15 14:57:57.853  INFO 5372 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2019-03-15 14:57:57.873  INFO 5372 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2019-03-15 15:19:59.015  INFO 5520 --- [main] example.Application                      : Starting Application on 4DQDOG1LGQFV9AC with PID 5520 (D:\IDEAWORK\springboot_security\build\classes\main started by Administrator in D:\IDEAWORK\springboot_security)
+2019-03-15 15:19:59.020  INFO 5520 --- [main] example.Application                      : The following profiles are active: office
+2019-03-15 15:19:59.349  INFO 5520 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:19:59 CST 2019]; root of context hierarchy
+2019-03-15 15:20:00.636  INFO 5520 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-15 15:20:00.749  INFO 5520 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'propertySourcesPlaceholderConfigurer' with a different definition: replacing [Root bean: class [org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/context/PropertyPlaceholderAutoConfiguration.class]] with [Root bean: class [org.springframework.boot.autoconfigure.session.RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]]
+2019-03-15 15:20:02.064  INFO 5520 --- [main] org.xnio                                 : XNIO version 3.3.6.Final
+2019-03-15 15:20:02.082  INFO 5520 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.6.Final
+2019-03-15 15:20:02.167  WARN 5520 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-03-15 15:20:02.168  WARN 5520 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-03-15 15:20:02.192  INFO 5520 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-03-15 15:20:02.193  INFO 5520 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2847 ms
+2019-03-15 15:20:02.565  INFO 5520 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-15 15:20:02.566  INFO 5520 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'springSessionRepositoryFilter' to: [/*]
+2019-03-15 15:20:02.566  INFO 5520 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-15 15:20:02.566  INFO 5520 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-15 15:20:02.566  INFO 5520 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-15 15:20:02.568  INFO 5520 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-15 15:20:02.568  INFO 5520 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-15 15:20:02.568  INFO 5520 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-15 15:20:02.641  WARN 5520 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myAuthenticationProvider': Unsatisfied dependency expressed through field 'myUserDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'jdbcDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-15 15:20:02.650  INFO 5520 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-03-15 15:20:02.777 ERROR 5520 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jdbcDao in example.config.security.MyUserDetailsService required a bean of type 'org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl' in your configuration.
+
+2019-03-15 15:20:29.674  INFO 9740 --- [main] example.Application                      : Starting Application on 4DQDOG1LGQFV9AC with PID 9740 (D:\IDEAWORK\springboot_security\build\classes\main started by Administrator in D:\IDEAWORK\springboot_security)
+2019-03-15 15:20:29.677  INFO 9740 --- [main] example.Application                      : The following profiles are active: office
+2019-03-15 15:20:30.032  INFO 9740 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:20:30 CST 2019]; root of context hierarchy
+2019-03-15 15:20:31.432  INFO 9740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-15 15:20:31.518  INFO 9740 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'propertySourcesPlaceholderConfigurer' with a different definition: replacing [Root bean: class [org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/context/PropertyPlaceholderAutoConfiguration.class]] with [Root bean: class [org.springframework.boot.autoconfigure.session.RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]]
+2019-03-15 15:20:32.962  INFO 9740 --- [main] org.xnio                                 : XNIO version 3.3.6.Final
+2019-03-15 15:20:32.982  INFO 9740 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.6.Final
+2019-03-15 15:20:33.077  WARN 9740 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-03-15 15:20:33.077  WARN 9740 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-03-15 15:20:33.103  INFO 9740 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-03-15 15:20:33.103  INFO 9740 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3074 ms
+2019-03-15 15:20:33.469  INFO 9740 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-15 15:20:33.470  INFO 9740 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'springSessionRepositoryFilter' to: [/*]
+2019-03-15 15:20:33.470  INFO 9740 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-15 15:20:33.470  INFO 9740 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-15 15:20:33.470  INFO 9740 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-15 15:20:33.471  INFO 9740 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-15 15:20:33.472  INFO 9740 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-15 15:20:33.472  INFO 9740 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-15 15:20:34.558  INFO 9740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@656ec00d, org.springframework.security.web.context.SecurityContextPersistenceFilter@42aa1324, org.springframework.security.web.header.HeaderWriterFilter@334540a0, org.springframework.security.web.authentication.logout.LogoutFilter@36dafa24, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@283a8ad6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ef8e623, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a1e57c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b8507df, org.springframework.security.web.session.SessionManagementFilter@b428830, org.springframework.security.web.access.ExceptionTranslationFilter@6fef75c6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c2d63f0]
+2019-03-15 15:20:34.884  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:20:30 CST 2019]; root of context hierarchy
+2019-03-15 15:20:34.971  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test]}" onto public java.lang.String example.user.controller.UserController.test(org.springframework.ui.ModelMap)
+2019-03-15 15:20:34.972  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout-success]}" onto public java.lang.String example.user.controller.UserController.logout()
+2019-03-15 15:20:34.972  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/show-authorizes]}" onto public java.lang.String example.user.controller.UserController.showAuthorizes()
+2019-03-15 15:20:34.973  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/sys/login]}" onto public java.lang.String example.user.controller.UserController.userList(org.springframework.ui.ModelMap)
+2019-03-15 15:20:34.973  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-faild]}" onto public java.lang.String example.user.controller.UserController.loginFaild()
+2019-03-15 15:20:34.973  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-success]}" onto public java.lang.String example.user.controller.UserController.loginSuccess()
+2019-03-15 15:20:34.973  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sys/formMultiple]}" onto public java.lang.String example.user.controller.UserController.formMultiple(java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile[])
+2019-03-15 15:20:34.976  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-15 15:20:34.976  INFO 9740 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-15 15:20:35.024  INFO 9740 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:20:35.024  INFO 9740 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:20:35.079  INFO 9740 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:20:36.172  INFO 9740 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-15 15:20:36.177  INFO 9740 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-15 15:20:36.184  INFO 9740 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-03-15 15:20:36.190  INFO 9740 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2019-03-15 15:20:36.204  INFO 9740 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-03-15 15:20:36.257  INFO 9740 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 8866 (http)
+2019-03-15 15:20:36.263  INFO 9740 --- [main] example.Application                      : Started Application in 7.186 seconds (JVM running for 7.829)
+2019-03-15 15:20:43.011 ERROR 9740 --- [XNIO-2 task-1] io.undertow.request                      : UT005023: Exception handling request to /login-success
+
+org.springframework.data.redis.serializer.SerializationException: Cannot deserialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:82) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.deserializeHashValue(AbstractOperations.java:338) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.deserializeHashMap(AbstractOperations.java:282) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:227) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultBoundHashOperations.entries(DefaultBoundHashOperations.java:102) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:432) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:402) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:245) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:327) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:344) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:217) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at javax.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:270) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.security.web.context.HttpSessionSecurityContextRepository.loadContext(HttpSessionSecurityContextRepository.java:110) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:167) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:80) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_121]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:78) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:36) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:80) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	... 70 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:73) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:73) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 72 common frames omitted
+Caused by: java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_121]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_121]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.ConfigurableObjectInputStream.resolveClass(ConfigurableObjectInputStream.java:74) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1819) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1713) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1986) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422) ~[na:1.8.0_121]
+	at java.util.ArrayList.readObject(ArrayList.java:791) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2122) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422) ~[na:1.8.0_121]
+	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:70) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 73 common frames omitted
+
+2019-03-15 15:20:43.016  INFO 9740 --- [XNIO-2 task-1] io.undertow.servlet                      : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-15 15:20:43.017  INFO 9740 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-15 15:20:43.037  INFO 9740 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2019-03-15 15:21:02.928 ERROR 9740 --- [XNIO-2 task-2] io.undertow.request                      : UT005023: Exception handling request to /test
+
+org.springframework.data.redis.serializer.SerializationException: Cannot deserialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:82) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.deserializeHashValue(AbstractOperations.java:338) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.deserializeHashMap(AbstractOperations.java:282) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:227) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultBoundHashOperations.entries(DefaultBoundHashOperations.java:102) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:432) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:402) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:245) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:327) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:344) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:217) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at javax.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:270) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.security.web.context.HttpSessionSecurityContextRepository.loadContext(HttpSessionSecurityContextRepository.java:110) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:167) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:80) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_121]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:78) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:36) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:80) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	... 70 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:73) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:73) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 72 common frames omitted
+Caused by: java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_121]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_121]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.ConfigurableObjectInputStream.resolveClass(ConfigurableObjectInputStream.java:74) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1819) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1713) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1986) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422) ~[na:1.8.0_121]
+	at java.util.ArrayList.readObject(ArrayList.java:791) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2122) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422) ~[na:1.8.0_121]
+	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:70) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 73 common frames omitted
+
+2019-03-15 15:21:37.513  INFO 7004 --- [main] example.Application                      : Starting Application on 4DQDOG1LGQFV9AC with PID 7004 (D:\IDEAWORK\springboot_security\build\classes\main started by Administrator in D:\IDEAWORK\springboot_security)
+2019-03-15 15:21:37.517  INFO 7004 --- [main] example.Application                      : The following profiles are active: office
+2019-03-15 15:21:37.823  INFO 7004 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:21:37 CST 2019]; root of context hierarchy
+2019-03-15 15:21:39.031  INFO 7004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-15 15:21:39.112  INFO 7004 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'propertySourcesPlaceholderConfigurer' with a different definition: replacing [Root bean: class [org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/context/PropertyPlaceholderAutoConfiguration.class]] with [Root bean: class [org.springframework.boot.autoconfigure.session.RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]]
+2019-03-15 15:21:40.413  INFO 7004 --- [main] org.xnio                                 : XNIO version 3.3.6.Final
+2019-03-15 15:21:40.433  INFO 7004 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.6.Final
+2019-03-15 15:21:40.527  WARN 7004 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-03-15 15:21:40.527  WARN 7004 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-03-15 15:21:40.552  INFO 7004 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-03-15 15:21:40.553  INFO 7004 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2734 ms
+2019-03-15 15:21:40.915  INFO 7004 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-15 15:21:40.916  INFO 7004 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'springSessionRepositoryFilter' to: [/*]
+2019-03-15 15:21:40.916  INFO 7004 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-15 15:21:40.916  INFO 7004 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-15 15:21:40.916  INFO 7004 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-15 15:21:40.918  INFO 7004 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-15 15:21:40.918  INFO 7004 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-15 15:21:40.918  INFO 7004 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-15 15:21:42.020  INFO 7004 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cfd5cd2, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b14f482, org.springframework.security.web.header.HeaderWriterFilter@7ead1d80, org.springframework.security.web.authentication.logout.LogoutFilter@44aa91e2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4c063cb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a785fd5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40c76f5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@762bf32d, org.springframework.security.web.session.SessionManagementFilter@1182413a, org.springframework.security.web.access.ExceptionTranslationFilter@919086, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@70d3cdbf]
+2019-03-15 15:21:42.336  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:21:37 CST 2019]; root of context hierarchy
+2019-03-15 15:21:42.427  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test]}" onto public java.lang.String example.user.controller.UserController.test(org.springframework.ui.ModelMap)
+2019-03-15 15:21:42.428  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout-success]}" onto public java.lang.String example.user.controller.UserController.logout()
+2019-03-15 15:21:42.428  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/show-authorizes]}" onto public java.lang.String example.user.controller.UserController.showAuthorizes()
+2019-03-15 15:21:42.429  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/sys/login]}" onto public java.lang.String example.user.controller.UserController.userList(org.springframework.ui.ModelMap)
+2019-03-15 15:21:42.429  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-faild]}" onto public java.lang.String example.user.controller.UserController.loginFaild()
+2019-03-15 15:21:42.429  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-success]}" onto public java.lang.String example.user.controller.UserController.loginSuccess()
+2019-03-15 15:21:42.429  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sys/formMultiple]}" onto public java.lang.String example.user.controller.UserController.formMultiple(java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile[])
+2019-03-15 15:21:42.432  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-15 15:21:42.432  INFO 7004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-15 15:21:42.479  INFO 7004 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:21:42.479  INFO 7004 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:21:42.533  INFO 7004 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:21:43.610  INFO 7004 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-15 15:21:43.615  INFO 7004 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-15 15:21:43.621  INFO 7004 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-03-15 15:21:43.627  INFO 7004 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2019-03-15 15:21:43.641  INFO 7004 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-03-15 15:21:43.696  INFO 7004 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 8866 (http)
+2019-03-15 15:21:43.701  INFO 7004 --- [main] example.Application                      : Started Application in 6.784 seconds (JVM running for 7.411)
+2019-03-15 15:21:47.327 ERROR 7004 --- [XNIO-2 task-1] io.undertow.request                      : UT005023: Exception handling request to /test
+
+org.springframework.data.redis.serializer.SerializationException: Cannot deserialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:82) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.deserializeHashValue(AbstractOperations.java:338) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.deserializeHashMap(AbstractOperations.java:282) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:227) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultBoundHashOperations.entries(DefaultBoundHashOperations.java:102) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:432) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:402) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:245) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:327) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:344) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:217) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at javax.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:270) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.security.web.context.HttpSessionSecurityContextRepository.loadContext(HttpSessionSecurityContextRepository.java:110) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:167) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:80) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_121]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:78) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:36) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:80) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	... 70 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:73) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:73) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 72 common frames omitted
+Caused by: java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_121]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_121]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.ConfigurableObjectInputStream.resolveClass(ConfigurableObjectInputStream.java:74) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1819) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1713) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1986) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422) ~[na:1.8.0_121]
+	at java.util.ArrayList.readObject(ArrayList.java:791) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2122) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422) ~[na:1.8.0_121]
+	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:70) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 73 common frames omitted
+
+2019-03-15 15:21:47.336  INFO 7004 --- [XNIO-2 task-1] io.undertow.servlet                      : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-15 15:21:47.336  INFO 7004 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-15 15:21:47.353  INFO 7004 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2019-03-15 15:21:49.088 ERROR 7004 --- [XNIO-2 task-2] io.undertow.request                      : UT005023: Exception handling request to /test
+
+org.springframework.data.redis.serializer.SerializationException: Cannot deserialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:82) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.deserializeHashValue(AbstractOperations.java:338) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.deserializeHashMap(AbstractOperations.java:282) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:227) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultBoundHashOperations.entries(DefaultBoundHashOperations.java:102) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:432) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:402) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.getSession(RedisOperationsSessionRepository.java:245) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:327) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:344) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:217) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at javax.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:270) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at org.springframework.security.web.context.HttpSessionSecurityContextRepository.loadContext(HttpSessionSecurityContextRepository.java:110) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:100) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:167) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:80) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_121]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:78) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:36) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:80) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	... 70 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to deserialize object type; nested exception is java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:73) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.DeserializingConverter.convert(DeserializingConverter.java:73) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 72 common frames omitted
+Caused by: java.lang.ClassNotFoundException: example.config.security.MyGrantedAuthority
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_121]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_121]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.ConfigurableObjectInputStream.resolveClass(ConfigurableObjectInputStream.java:74) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1819) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1713) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1986) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422) ~[na:1.8.0_121]
+	at java.util.ArrayList.readObject(ArrayList.java:791) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1058) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2122) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535) ~[na:1.8.0_121]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422) ~[na:1.8.0_121]
+	at org.springframework.core.serializer.DefaultDeserializer.deserialize(DefaultDeserializer.java:70) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 73 common frames omitted
+
+2019-03-15 15:23:16.855 ERROR 7004 --- [redisMessageListenerContainer-1] o.s.d.r.l.RedisMessageListenerContainer  : Connection failure occurred. Restarting subscription task after 5000 ms
+2019-03-15 15:23:21.857 ERROR 7004 --- [redisMessageListenerContainer-2] o.s.d.r.l.RedisMessageListenerContainer  : Connection failure occurred. Restarting subscription task after 5000 ms
+2019-03-15 15:23:33.043  INFO 996 --- [main] example.Application                      : Starting Application on 4DQDOG1LGQFV9AC with PID 996 (D:\IDEAWORK\springboot_security\build\classes\main started by Administrator in D:\IDEAWORK\springboot_security)
+2019-03-15 15:23:33.046  INFO 996 --- [main] example.Application                      : The following profiles are active: office
+2019-03-15 15:23:33.361  INFO 996 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:23:33 CST 2019]; root of context hierarchy
+2019-03-15 15:23:34.631  INFO 996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-15 15:23:34.711  INFO 996 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'propertySourcesPlaceholderConfigurer' with a different definition: replacing [Root bean: class [org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/context/PropertyPlaceholderAutoConfiguration.class]] with [Root bean: class [org.springframework.boot.autoconfigure.session.RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]]
+2019-03-15 15:23:36.025  INFO 996 --- [main] org.xnio                                 : XNIO version 3.3.6.Final
+2019-03-15 15:23:36.044  INFO 996 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.6.Final
+2019-03-15 15:23:36.137  WARN 996 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-03-15 15:23:36.137  WARN 996 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-03-15 15:23:36.163  INFO 996 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-03-15 15:23:36.163  INFO 996 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2805 ms
+2019-03-15 15:23:36.515  INFO 996 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-15 15:23:36.516  INFO 996 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'springSessionRepositoryFilter' to: [/*]
+2019-03-15 15:23:36.517  INFO 996 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-15 15:23:36.517  INFO 996 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-15 15:23:36.517  INFO 996 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-15 15:23:36.518  INFO 996 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-15 15:23:36.519  INFO 996 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-15 15:23:36.519  INFO 996 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-15 15:23:37.655  INFO 996 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3957d88b, org.springframework.security.web.context.SecurityContextPersistenceFilter@5cf0673d, org.springframework.security.web.header.HeaderWriterFilter@2df3545d, org.springframework.security.web.authentication.logout.LogoutFilter@75ed125a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1de7f898, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a323a5b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44aa91e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1152900, org.springframework.security.web.session.SessionManagementFilter@fe8aaeb, org.springframework.security.web.access.ExceptionTranslationFilter@4a660b34, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18907af2]
+2019-03-15 15:23:37.963  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:23:33 CST 2019]; root of context hierarchy
+2019-03-15 15:23:38.056  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test]}" onto public java.lang.String example.user.controller.UserController.test(org.springframework.ui.ModelMap)
+2019-03-15 15:23:38.057  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout-success]}" onto public java.lang.String example.user.controller.UserController.logout()
+2019-03-15 15:23:38.058  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/show-authorizes]}" onto public java.lang.String example.user.controller.UserController.showAuthorizes()
+2019-03-15 15:23:38.058  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/sys/login]}" onto public java.lang.String example.user.controller.UserController.userList(org.springframework.ui.ModelMap)
+2019-03-15 15:23:38.058  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-faild]}" onto public java.lang.String example.user.controller.UserController.loginFaild()
+2019-03-15 15:23:38.058  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-success]}" onto public java.lang.String example.user.controller.UserController.loginSuccess()
+2019-03-15 15:23:38.058  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sys/formMultiple]}" onto public java.lang.String example.user.controller.UserController.formMultiple(java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile[])
+2019-03-15 15:23:38.061  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-15 15:23:38.061  INFO 996 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-15 15:23:38.107  INFO 996 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:23:38.107  INFO 996 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:23:38.156  INFO 996 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:23:39.265  INFO 996 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-15 15:23:39.270  INFO 996 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-15 15:23:39.276  INFO 996 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-03-15 15:23:39.282  INFO 996 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2019-03-15 15:23:39.296  INFO 996 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-03-15 15:23:39.348  INFO 996 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 8866 (http)
+2019-03-15 15:23:39.353  INFO 996 --- [main] example.Application                      : Started Application in 6.895 seconds (JVM running for 7.49)
+2019-03-15 15:23:43.808  INFO 996 --- [XNIO-2 task-2] io.undertow.servlet                      : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-15 15:23:43.809  INFO 996 --- [XNIO-2 task-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-15 15:23:43.827  INFO 996 --- [XNIO-2 task-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2019-03-15 15:24:05.589 ERROR 996 --- [XNIO-2 task-11] io.undertow.request                      : UT005023: Exception handling request to /sys/userSubmit
+
+org.springframework.data.redis.serializer.SerializationException: Cannot serialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.io.NotSerializableException: example.config.security.MyUserDetailsService
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:93) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.AbstractOperations.rawHashValue(AbstractOperations.java:171) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultHashOperations.putAll(DefaultHashOperations.java:129) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.data.redis.core.DefaultBoundHashOperations.putAll(DefaultBoundHashOperations.java:86) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository$RedisSession.saveDelta(RedisOperationsSessionRepository.java:778) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository$RedisSession.access$000(RedisOperationsSessionRepository.java:670) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.save(RedisOperationsSessionRepository.java:388) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.data.redis.RedisOperationsSessionRepository.save(RedisOperationsSessionRepository.java:245) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.commitSession(SessionRepositoryFilter.java:245) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.access$100(SessionRepositoryFilter.java:217) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:170) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:80) ~[spring-session-1.3.1.RELEASE.jar:na]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81) ~[undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104) [undertow-servlet-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809) [undertow-core-1.4.15.Final.jar:1.4.15.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_121]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+Caused by: org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer; nested exception is java.io.NotSerializableException: example.config.security.MyUserDetailsService
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:68) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:35) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:91) ~[spring-data-redis-1.8.4.RELEASE.jar:na]
+	... 44 common frames omitted
+Caused by: java.io.NotSerializableException: example.config.security.MyUserDetailsService
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348) ~[na:1.8.0_121]
+	at java.util.ArrayList.writeObject(ArrayList.java:762) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1028) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1509) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178) ~[na:1.8.0_121]
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348) ~[na:1.8.0_121]
+	at org.springframework.core.serializer.DefaultSerializer.serialize(DefaultSerializer.java:46) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:63) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 46 common frames omitted
+
+2019-03-15 15:24:29.975  INFO 8576 --- [main] example.Application                      : Starting Application on 4DQDOG1LGQFV9AC with PID 8576 (D:\IDEAWORK\springboot_security\build\classes\main started by Administrator in D:\IDEAWORK\springboot_security)
+2019-03-15 15:24:29.979  INFO 8576 --- [main] example.Application                      : The following profiles are active: office
+2019-03-15 15:24:30.246  INFO 8576 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:24:30 CST 2019]; root of context hierarchy
+2019-03-15 15:24:31.565  INFO 8576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-15 15:24:31.647  INFO 8576 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'propertySourcesPlaceholderConfigurer' with a different definition: replacing [Root bean: class [org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/context/PropertyPlaceholderAutoConfiguration.class]] with [Root bean: class [org.springframework.boot.autoconfigure.session.RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]]
+2019-03-15 15:24:32.951  INFO 8576 --- [main] org.xnio                                 : XNIO version 3.3.6.Final
+2019-03-15 15:24:32.971  INFO 8576 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.6.Final
+2019-03-15 15:24:33.069  WARN 8576 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-03-15 15:24:33.069  WARN 8576 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-03-15 15:24:33.096  INFO 8576 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-03-15 15:24:33.097  INFO 8576 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2857 ms
+2019-03-15 15:24:33.465  INFO 8576 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-15 15:24:33.466  INFO 8576 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'springSessionRepositoryFilter' to: [/*]
+2019-03-15 15:24:33.466  INFO 8576 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-15 15:24:33.466  INFO 8576 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-15 15:24:33.467  INFO 8576 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-15 15:24:33.468  INFO 8576 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-15 15:24:33.468  INFO 8576 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-15 15:24:33.468  INFO 8576 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-15 15:24:34.611  INFO 8576 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65859b44, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e807e2, org.springframework.security.web.header.HeaderWriterFilter@2e45a357, org.springframework.security.web.authentication.logout.LogoutFilter@33627576, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@baa9ce4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@203b953c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5873f3f0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d9f5fce, org.springframework.security.web.session.SessionManagementFilter@bb8ead8, org.springframework.security.web.access.ExceptionTranslationFilter@2bb31455, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4e4894d]
+2019-03-15 15:24:34.951  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:24:30 CST 2019]; root of context hierarchy
+2019-03-15 15:24:35.039  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test]}" onto public java.lang.String example.user.controller.UserController.test(org.springframework.ui.ModelMap)
+2019-03-15 15:24:35.040  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout-success]}" onto public java.lang.String example.user.controller.UserController.logout()
+2019-03-15 15:24:35.041  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/show-authorizes]}" onto public java.lang.String example.user.controller.UserController.showAuthorizes()
+2019-03-15 15:24:35.041  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/sys/login]}" onto public java.lang.String example.user.controller.UserController.userList(org.springframework.ui.ModelMap)
+2019-03-15 15:24:35.041  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-faild]}" onto public java.lang.String example.user.controller.UserController.loginFaild()
+2019-03-15 15:24:35.041  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-success]}" onto public java.lang.String example.user.controller.UserController.loginSuccess()
+2019-03-15 15:24:35.042  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sys/formMultiple]}" onto public java.lang.String example.user.controller.UserController.formMultiple(java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile[])
+2019-03-15 15:24:35.044  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-15 15:24:35.045  INFO 8576 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-15 15:24:35.094  INFO 8576 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:24:35.095  INFO 8576 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:24:35.145  INFO 8576 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:24:36.289  INFO 8576 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-15 15:24:36.291  INFO 8576 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-15 15:24:36.296  INFO 8576 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-03-15 15:24:36.302  INFO 8576 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2019-03-15 15:24:36.315  INFO 8576 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-03-15 15:24:36.366  INFO 8576 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 8866 (http)
+2019-03-15 15:24:36.371  INFO 8576 --- [main] example.Application                      : Started Application in 7.015 seconds (JVM running for 7.626)
+2019-03-15 15:24:42.626  INFO 8576 --- [XNIO-2 task-1] io.undertow.servlet                      : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-15 15:24:42.626  INFO 8576 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-15 15:24:42.645  INFO 8576 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2019-03-15 15:54:40.114  INFO 9132 --- [main] example.Application                      : Starting Application on 4DQDOG1LGQFV9AC with PID 9132 (D:\IDEAWORK\springboot_security\build\classes\main started by Administrator in D:\IDEAWORK\springboot_security)
+2019-03-15 15:54:40.117  INFO 9132 --- [main] example.Application                      : The following profiles are active: office
+2019-03-15 15:54:40.535  INFO 9132 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:54:40 CST 2019]; root of context hierarchy
+2019-03-15 15:54:41.709  INFO 9132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-15 15:54:41.805  INFO 9132 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'propertySourcesPlaceholderConfigurer' with a different definition: replacing [Root bean: class [org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/context/PropertyPlaceholderAutoConfiguration.class]] with [Root bean: class [org.springframework.boot.autoconfigure.session.RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=propertySourcesPlaceholderConfigurer; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]]
+2019-03-15 15:54:43.194  INFO 9132 --- [main] org.xnio                                 : XNIO version 3.3.6.Final
+2019-03-15 15:54:43.215  INFO 9132 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.6.Final
+2019-03-15 15:54:43.314  WARN 9132 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-03-15 15:54:43.314  WARN 9132 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-03-15 15:54:43.339  INFO 9132 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-03-15 15:54:43.339  INFO 9132 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2808 ms
+2019-03-15 15:54:43.764  INFO 9132 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-15 15:54:43.765  INFO 9132 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'springSessionRepositoryFilter' to: [/*]
+2019-03-15 15:54:43.765  INFO 9132 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-15 15:54:43.766  INFO 9132 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-15 15:54:43.766  INFO 9132 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-15 15:54:43.767  INFO 9132 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-03-15 15:54:43.767  INFO 9132 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019-03-15 15:54:43.767  INFO 9132 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-15 15:54:44.901  INFO 9132 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b3d9c38, org.springframework.security.web.context.SecurityContextPersistenceFilter@653a5967, org.springframework.security.web.header.HeaderWriterFilter@2c579202, org.springframework.security.web.authentication.logout.LogoutFilter@3b96f8b0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e747037, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@766b6d02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5bb2fb2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@426710f0, org.springframework.security.web.session.SessionManagementFilter@11c7a0b4, org.springframework.security.web.access.ExceptionTranslationFilter@2b9e69fb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d283d1]
+2019-03-15 15:54:45.237  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@73302995: startup date [Fri Mar 15 15:54:40 CST 2019]; root of context hierarchy
+2019-03-15 15:54:45.321  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test]}" onto public java.lang.String example.user.controller.UserController.test(org.springframework.ui.ModelMap)
+2019-03-15 15:54:45.322  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout-success]}" onto public java.lang.String example.user.controller.UserController.logout()
+2019-03-15 15:54:45.322  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/show-authorizes]}" onto public java.lang.String example.user.controller.UserController.showAuthorizes()
+2019-03-15 15:54:45.323  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/base/sys/login]}" onto public java.lang.String example.user.controller.UserController.userList(org.springframework.ui.ModelMap)
+2019-03-15 15:54:45.323  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-faild]}" onto public java.lang.String example.user.controller.UserController.loginFaild()
+2019-03-15 15:54:45.323  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login-success]}" onto public java.lang.String example.user.controller.UserController.loginSuccess()
+2019-03-15 15:54:45.323  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sys/formMultiple]}" onto public java.lang.String example.user.controller.UserController.formMultiple(java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile[])
+2019-03-15 15:54:45.325  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-15 15:54:45.326  INFO 9132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-15 15:54:45.428  INFO 9132 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:54:45.428  INFO 9132 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:54:45.476  INFO 9132 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-15 15:54:46.682  INFO 9132 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-15 15:54:46.687  INFO 9132 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-15 15:54:46.692  INFO 9132 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-03-15 15:54:46.699  INFO 9132 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2019-03-15 15:54:46.713  INFO 9132 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-03-15 15:54:46.767  INFO 9132 --- [main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 8866 (http)
+2019-03-15 15:54:46.772  INFO 9132 --- [main] example.Application                      : Started Application in 7.255 seconds (JVM running for 7.881)
+2019-03-15 15:55:09.571  INFO 9132 --- [XNIO-2 task-2] io.undertow.servlet                      : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-15 15:55:09.572  INFO 9132 --- [XNIO-2 task-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-15 15:55:09.588  INFO 9132 --- [XNIO-2 task-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms

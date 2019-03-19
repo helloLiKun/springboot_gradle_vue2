@@ -7,8 +7,10 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -18,10 +20,7 @@ import java.util.List;
  * Created by lk on 2019/3/13.
  */
 @Component
-public class MyUserDetailsService implements UserDetailsService {
-
-    @Autowired
-    MyGrantedAuthority myGrantedAuthority;
+public class MyUserDetailsService implements UserDetailsService,Serializable {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -29,7 +28,15 @@ public class MyUserDetailsService implements UserDetailsService {
         if(username.equals("admin")) {
             //假设返回的用户信息如下;
             List<GrantedAuthority> authorities=new ArrayList<>();
-            authorities.add(myGrantedAuthority);
+            String[] authoritiesArr=new String[]{"ROLE_USER","ROLE_TEST"};
+            for(String authorite:authoritiesArr){
+                authorities.add(new GrantedAuthority() {
+                    @Override
+                    public String getAuthority() {
+                        return authorite;
+                    }
+                });
+            }
             User user=new User("admin", "b594510740d2ac4261c1b2fe87850d08",authorities);
             return user;
         }
